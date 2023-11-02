@@ -7,7 +7,7 @@ foreach spr [glob **/*.spr] {
 	platform read $spr
 }
 
-#Leave untouched
+#Rebuild all platforms/domains
 set platforms [dict keys [platform list -dict]]
 foreach platform $platforms {
 	puts "> Platform: $platform"

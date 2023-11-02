@@ -10,6 +10,10 @@ export/
 .metadata
 RemoteSystemsTempFiles/
 
+#Generate HW files
+*/hw/
+!*/hw/*.xsa
+
 
 #Generated BSP files
 **/*bsp/ps7_cortexa9_*
@@ -18,9 +22,7 @@ RemoteSystemsTempFiles/
 **/*bsp/psu_pmu_*
 
 #BSP Export (listed contents separately because "export" is a common name)
-**/export/*/hw/
-**/export/*/sw/
-**/export/*/*.xpfm
+*/export/
 
 Makefile
 *.mk
