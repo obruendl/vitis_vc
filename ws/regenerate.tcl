@@ -1,13 +1,13 @@
 puts "*** Regenerate all BSPs ***"
 
-#Remark: Tested with a single platform only!
-
 #Read all platforms
+puts "Read platform"
 foreach spr [glob **/*.spr] {
 	platform read $spr
 }
 
 #Rebuild all platforms/domains
+puts "Rebuild platforms and domains"
 set platforms [dict keys [platform list -dict]]
 foreach platform $platforms {
 	puts "> Platform: $platform"
@@ -21,4 +21,15 @@ foreach platform $platforms {
 		bsp reload
 		bsp regenerate
 	}
+	repo -add-platforms ./$platform
+}
+
+#Switch platform for all aps
+puts "Configure apps"
+set apps [app list -dict]
+foreach app_name [dict keys $apps] {
+	puts "> App: $app_name"
+	set app_dict [dict get $apps $app_name]
+	set app_platform [dict get $app_dict platform]
+	app switch -name $app_name -platform $app_platform
 }
