@@ -17,7 +17,7 @@ RemoteSystemsTempFiles/
 **/*bsp/psu_cortexr5_*
 **/*bsp/psu_pmu_*
 
-#BSP Export
+#BSP Export (listed contents separately because "export" is a common name)
 **/export/*/hw/
 **/export/*/sw/
 **/export/*/*.xpfm
