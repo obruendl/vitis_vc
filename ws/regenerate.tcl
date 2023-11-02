@@ -1,5 +1,8 @@
 puts "*** Regenerate all BSPs ***"
 
+#Note: Script was tested with a single platform only
+#Note: Script was tested for zynq-7000
+
 #Read all platforms
 puts "Read platform"
 foreach spr [glob **/*.spr] {
