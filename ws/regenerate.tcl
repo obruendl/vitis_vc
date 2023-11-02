@@ -11,11 +11,17 @@ foreach spr [glob **/*.spr] {
 
 #Rebuild all platforms/domains
 puts "Rebuild platforms and domains"
-set platforms [dict keys [platform list -dict]]
-foreach platform $platforms {
-	puts "> Platform: $platform"
-	platform generate $platform
-	platform active $platform
+set platforms [platform list -dict]
+foreach plt_name [dict keys $platforms] {
+	#Do not make anything for platforms in repository
+	set plt_dict [dict get $platforms $plt_name]
+	if {[dict get $plt_dict user_defined] == no} {
+	   continue
+	}
+	# Generate user platforms
+	puts "> Platform: $plt_name"
+	platform generate $plt_name
+	platform active $plt_name
 	set domains [dict keys [domain list -dict]]
 	foreach domain $domains {
 		puts " > Domain: $domain"
@@ -24,7 +30,7 @@ foreach platform $platforms {
 		bsp reload
 		bsp regenerate
 	}
-	repo -add-platforms ./$platform
+	repo -add-platforms ./$plt_name
 }
 
 #Switch platform for all aps
