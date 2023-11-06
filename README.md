@@ -46,3 +46,15 @@ The following steps must be executed after a fresh clone:
 After modifications, no special steps are required. Just commit/push the changes.
 
 Ideally you do avoid committing modified project files (changed absolute paths) if you did not change anything in the project settings.
+
+## Findings
+
+Numbers from an example Zynq-7000 project:
+* Total files in workspace:
+  * 2'300 files
+  * 48 MB
+* Checked-in files with above approach:
+  * 85 files (most are BSP sources)
+  * 7.7MB (most of the size comes from the XSA file)
+
+Note: BSP sources are not ignored because they potentially contain project related changes.
