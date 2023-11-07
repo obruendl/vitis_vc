@@ -2,11 +2,11 @@
 
 ## Intro
 
-For my teaching at FHNW, I checked if it is possible to version-control Vitis projects without manually writing TCL scripts. This might or might not be useful for Enclustra - I decided to share the knowledge anyways.
+I checked if it is possible to version-control Vitis projects without manually writing TCL scripts. 
 
-At FHNW the main motivation is that I do not want to teach students TCL plus all the vitis commands before they can work with GIT for their projects. Similar topics may apply to DS customers. I remember a case where PSTU had to update the TCL scripts whenever the custoemr sent us a new version of the project, which often contained changes in the BSP settings.
+The main motivation is that not everybody (especially sporadic AMD/Xilinx users) wants to learn TCL plus all the vitis commands before they can work with GIT for their projects. 
 
-**Note:** The example is targeting Vitis 2023.1. It does not match the **new* Vitis (2023.2 and newer). The old GUI can still be used in 2023.2 by starting vitis as showne below:
+**Note:** The example is targeting Vitis 2023.1. It does not match the *new* Vitis (2023.2 and newer). The old GUI can still be used in 2023.2 by starting vitis as showne below:
 ```
 vitis -classic
 ```
@@ -57,4 +57,4 @@ Numbers from an example Zynq-7000 project:
   * 85 files (most are BSP sources)
   * 7.7MB (most of the size comes from the XSA file)
 
-Note: BSP sources are not ignored because they potentially contain project related changes.
+**Note:** BSP sources are not ignored because they potentially contain project related changes.
