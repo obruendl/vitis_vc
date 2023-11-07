@@ -58,3 +58,10 @@ Numbers from an example Zynq-7000 project:
   * 7.7MB (most of the size comes from the XSA file)
 
 **Note:** BSP sources are not ignored because they potentially contain project related changes.
+
+## Version Info
+* Tested in:
+  * 2023.1
+  * 2023.2 (classic)
+* Known to not work prior to and including
+  * 2021.1 (various bugs with MSS files for platform projects)
