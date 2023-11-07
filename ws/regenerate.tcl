@@ -30,6 +30,7 @@ foreach plt_name [dict keys $platforms] {
 		bsp reload
 		bsp regenerate
 	}
+	platform generate
 	repo -add-platforms ./$plt_name
 }
 
