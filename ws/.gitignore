@@ -12,7 +12,7 @@ RemoteSystemsTempFiles/
 **/_ide/*
 
 #Generate HW files
-*/hw/
+*/hw/**/*
 !*/hw/*.xsa
 
 
